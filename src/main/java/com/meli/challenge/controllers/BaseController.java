@@ -5,7 +5,6 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.meli.challenge.services.MutantAnalyzerService;
 
 public class BaseController {
-//hola
 	@Autowired
     protected MutantAnalyzerService mutantsService;
 	@Autowired
