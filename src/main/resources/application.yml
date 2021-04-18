@@ -1,0 +1,1 @@
+server:  port: 5000spring:  jpa:    hibernate:      ddl-auto: update    properties:      hibernate:        dialect: org.hibernate.dialect.MySQL8Dialect  datasource:    url: jdbc:mysql://localhost:3306/mutantsdb?zeroDateTimeBehavior=convertToNull&serverTimezone=UTC    username: root    password: root
