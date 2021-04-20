@@ -22,19 +22,7 @@ public class MutantAnalyzerServiceImplement implements MutantAnalyzerService{
             return dna.getIsMutant();
 
         dna = new Dna(dnaString, false);
-       /* GeneralizedSuffixTree generalizedSuffixTree = new GeneralizedSuffixTree();
-        ArrayList<String> sequence = reorganizeDnaSequence(dna);
-        for (int i = 0; i < sequence.size(); i++) {
-            generalizedSuffixTree.put(sequence.get(i), i);
-        }
-        int count = 0;
-        for (String mutantDnaSequence : MUTANT_DNA_SEQUENCES) {
-            count += generalizedSuffixTree.search(mutantDnaSequence).size();
-            if (count >= 2) {
-                dna.setIsMutant(true);
-                break;
-            }
-        }*/
+
         int count = 0;
         ArrayList<String> sequence = reorganizeDnaSequence(dna);
         for (int i = 0; i < sequence.size(); i++) {
@@ -54,11 +42,11 @@ public class MutantAnalyzerServiceImplement implements MutantAnalyzerService{
     private static ArrayList<String> reorganizeDnaSequence(Dna dna) {
         ArrayList<String> sequenceReorganized = new ArrayList<>();
         String[] sequence = dna.getSequence();
-        // Reorganizo filas
+        // Filas
         for (String s : sequence) {
             sequenceReorganized.add(s);
         }
-        // Reorganizo Columnas
+        // Columnas
         for (int row = 0; row < sequence.length; row++) {
             StringBuffer strColumn = new StringBuffer(sequence.length);
             for (int column = 0; column < sequence.length; column++) {
@@ -66,7 +54,7 @@ public class MutantAnalyzerServiceImplement implements MutantAnalyzerService{
             }
             sequenceReorganized.add(strColumn.toString());
         }
-        // Reorganizo oblicuo
+        // Oblicuo
         int recorrido = sequence.length - tamanio_dna;
         for (int i = 0; i < recorrido; i++) {
             StringBuffer obliqueDna1 = new StringBuffer(sequence.length);

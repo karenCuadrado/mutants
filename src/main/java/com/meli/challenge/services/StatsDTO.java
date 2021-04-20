@@ -4,8 +4,6 @@ public class StatsDTO {
 	
 	private long count_mutant_dna;
 	private long count_human_dna;
-// private double ratio;
-
 
 	public StatsDTO(long countMutants, long countHuman) {
 		this.count_mutant_dna = countMutants;
